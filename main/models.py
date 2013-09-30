@@ -10,7 +10,7 @@ class ProjectPicture(models.Model):
 
 class ProjectTag(models.Model):
     name = models.TextField()
-    slug = models.SlugField()
+    slug = models.SlugField(null=True, blank=True)
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)
