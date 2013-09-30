@@ -21,8 +21,8 @@ class HomeView(ListView):
         if self.page in self.page_list:
             return super(HomeView, self).dispatch(*args, **kwargs)
 
-        #If the page is not in the range of possible pages, redirect to home
-        return redirect('home')
+        #If the page is not in the range of possible pages, redirect to page 1
+        return redirect('home_paginated', page=1)
 
     def get_context_data(self, **kwargs):
         context = super(HomeView, self).get_context_data(**kwargs)
@@ -32,7 +32,7 @@ class HomeView(ListView):
         context['current_page'] = self.page
 
         context['prev_page'] = self.page-1 if self.page > 1 else 1
-        context['next_page'] = self.page+1 if self.page < self.numPages else self.numPages-1
+        context['next_page'] = self.page+1 if self.page < self.numPages else self.numPages
 
         context['page_list'] = self.page_list
 
