@@ -1,0 +1,29 @@
+#footer {
+  border-top: 1px solid #bcbcbc;
+}
+#footer h3.contact-label {
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 48px;
+  font-weight: normal;
+  margin: 40px 0;
+  margin-right: 60px;
+}
+#footer p.contact-info {
+  font-family: Times;
+  font-size: 25px;
+  font-style: italic;
+  display: inline-block;
+  position: relative;
+  top: -5px;
+}
+#footer p.contact-info .slash {
+  margin: 0 15px;
+}
+#footer p.contact-info .phone {
+  font-size: 20px;
+}
+#footer p.contact-info .email {
+  color: #bcbcbc;
+  text-decoration: none;
+}

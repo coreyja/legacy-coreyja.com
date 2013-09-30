@@ -5,23 +5,6 @@
   font-weight: normal;
   font-style: normal;
 }
-html,
-body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  font-family: Times;
-  color: #bcbcbc;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Alternate Gothic';
-  color: #9a9a9a;
-}
 #header {
   width: 100%;
 }
@@ -89,6 +72,52 @@ h6 {
 }
 .colors-bar span.orange {
   background: #ffbb33;
+}
+#footer {
+  border-top: 1px solid #bcbcbc;
+}
+#footer h3.contact-label {
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 48px;
+  font-weight: normal;
+  margin: 40px 0;
+  margin-right: 60px;
+}
+#footer p.contact-info {
+  font-family: Times;
+  font-size: 25px;
+  font-style: italic;
+  display: inline-block;
+  position: relative;
+  top: -5px;
+}
+#footer p.contact-info .slash {
+  margin: 0 15px;
+}
+#footer p.contact-info .phone {
+  font-size: 20px;
+}
+#footer p.contact-info .email {
+  color: #bcbcbc;
+  text-decoration: none;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-family: Times;
+  color: #bcbcbc;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Alternate Gothic';
+  color: #9a9a9a;
 }
 div.wrap {
   width: 1280px;
