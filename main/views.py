@@ -9,7 +9,7 @@ class HomeView(ListView):
     model = Project
     template_name = 'Portfolio/grid.html'
 
-    model_query = Project.objects.filter(pictures__is_thumbnail=True)
+    model_query = Project.objects.filter(thumbnail__isnull=False)
 
     def dispatch(self, *args, **kwargs):
         #Store stuff so we don't have to calculate them in each of these functions

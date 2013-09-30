@@ -1,15 +1,6 @@
 from django.db import models
 from django.template.defaultfilters import slugify
 
-import random
-
-
-class ProjectPicture(models.Model):
-
-    picture = models.ImageField(upload_to='./project-pics/')
-    is_thumbnail = models.BooleanField(default=False)
-
-
 class ProjectTag(models.Model):
     name = models.TextField()
     slug = models.SlugField(null=True, blank=True)
@@ -29,7 +20,7 @@ class Project(models.Model):
     description = models.TextField()
     short_description = models.TextField()
 
-    pictures = models.ManyToManyField(ProjectPicture, related_name="projects", blank=True, null=True)
+    thumbnail = models.ImageField(upload_to='./project-pics/thumbnails/', blank=True, null=True)
 
     tags = models.ManyToManyField(ProjectTag, related_name="projects", blank=True, null=True)
 
@@ -43,10 +34,8 @@ class Project(models.Model):
 
         return colors[rem]
 
-    def thumbnail_url(self):
-        thumbnails = self.pictures.filter(is_thumbnail=True)
-        if thumbnails:
-            return thumbnails[0].picture.url
 
-        return False
+class ProjectPicture(models.Model):
 
+    picture = models.ImageField(upload_to='./project-pics/')
+    project = models.ForeignKey(Project, related_name="pictures", blank=True, null=True)

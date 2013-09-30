@@ -7,7 +7,7 @@
     <div id="grid">
         {% for project in object_list %}
             <div class="portfolio-item" data-project-id="{{ project.id }}">
-                <img src="{{ project.thumbnail_url }}">
+                <img src="{{ project.thumbnail.url }}">
 
                 <div class="hover {{ project.get_hover_color }}">
                     <h3 class="project-name">{{ project.name }}</h3>
