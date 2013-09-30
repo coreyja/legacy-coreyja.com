@@ -1,6 +1,7 @@
 from django.db import models
 from django.template.defaultfilters import slugify
 
+
 class ProjectTag(models.Model):
     name = models.TextField()
     slug = models.SlugField(null=True, blank=True)
@@ -39,3 +40,6 @@ class ProjectPicture(models.Model):
 
     picture = models.ImageField(upload_to='./project-pics/')
     project = models.ForeignKey(Project, related_name="pictures", blank=True, null=True)
+
+    def __unicode__(self):
+        return self.picture.name
