@@ -5,3 +5,4 @@ coreyja/local_settings.py
 
 .idea/
 static/fonts/AlternateGothic/
+media/

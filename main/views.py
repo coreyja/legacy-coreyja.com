@@ -9,12 +9,14 @@ class HomeView(ListView):
     model = Project
     template_name = 'Portfolio/grid.html'
 
-    def dispatch(self, *args, **kwargs):
-        #Store page and numPages so we don't have to calculate them every time
-        self.numPages = int(math.ceil(Project.objects.count()/6.0))
+    model_query = Project.objects.filter(pictures__is_thumbnail=True)
 
+    def dispatch(self, *args, **kwargs):
+        #Store stuff so we don't have to calculate them in each of these functions
         page = self.kwargs['page'] if 'page' in self.kwargs else 1
         self.page = int(page)
+
+        self.numPages = int(math.ceil(self.model_query.count()/6.0))
 
         self.page_list = range(1,self.numPages+1)
 
@@ -42,4 +44,4 @@ class HomeView(ListView):
         offsetStart = 6*(self.page-1)
         offsetEnd = offsetStart+6
 
-        return Project.objects.all().order_by('id')[offsetStart:offsetEnd]
+        return self.model_query.order_by('id')[offsetStart:offsetEnd]

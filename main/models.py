@@ -1,6 +1,8 @@
 from django.db import models
 from django.template.defaultfilters import slugify
 
+import random
+
 
 class ProjectPicture(models.Model):
 
@@ -40,4 +42,11 @@ class Project(models.Model):
         colors = ['red', 'purple', 'green', 'orange', 'blue']
 
         return colors[rem]
+
+    def thumbnail_url(self):
+        thumbnails = self.pictures.filter(is_thumbnail=True)
+        if thumbnails:
+            return thumbnails[0].picture.url
+
+        return False
 
