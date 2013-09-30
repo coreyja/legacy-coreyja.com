@@ -44,4 +44,4 @@ class HomeView(ListView):
         offsetStart = 6*(self.page-1)
         offsetEnd = offsetStart+6
 
-        return self.model_query.order_by('id')[offsetStart:offsetEnd]
+        return self.model_query.prefetch_related('tags').order_by('id')[offsetStart:offsetEnd]
