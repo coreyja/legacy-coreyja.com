@@ -41,6 +41,9 @@ class Project(models.Model):
 
         return colors[rem]
 
+    def get_tag_string(self):
+        return ', '.join([str(x) for x in self.tags.all()])
+
 
 class ProjectPicture(models.Model):
 
