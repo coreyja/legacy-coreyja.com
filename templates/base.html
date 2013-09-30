@@ -3,10 +3,16 @@
 <head>
     <title>CoreyJA.com</title>
 
+    {% if debug %}
     <link href="/static/css/styles.css" rel="stylesheet">
+    {% else %}
+    <link href="/static/css/styles.min.css" rel="stylesheet">
+    {% endif %}
 
 </head>
 <body>
+
+
 
     {% include 'header.html' %}
 
