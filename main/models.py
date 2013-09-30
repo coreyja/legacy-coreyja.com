@@ -1,3 +1,4 @@
+from django.core.urlresolvers import reverse
 from django.db import models
 from django.template.defaultfilters import slugify
 
@@ -33,6 +34,9 @@ class Project(models.Model):
 
     def __unicode__(self):
         return self.name
+
+    def get_url(self):
+        return reverse('project', kwargs={'slug':self.slug})
 
     def get_hover_color(self):
         rem = self.id % 5

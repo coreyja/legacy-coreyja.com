@@ -12,7 +12,7 @@
                 <div class="hover {{ project.get_hover_color }}">
                     <h3 class="project-name">{{ project.name }}</h3>
                     <h4 class="project-short-desc">{{ project.get_tag_string }}</h4>
-                    <a class="view-project" href="#">more <i class="icon-angle-right"></i></a>
+                    <a class="view-project" href="{{ project.get_url }}">more <i class="icon-angle-right"></i></a>
                 </div>
             </div>
         {% endfor %}

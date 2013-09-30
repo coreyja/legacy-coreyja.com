@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, include, url
 
-from main.views import HomeView
+from main.views import HomeView, ProjectView
 import settings
 
 # Uncomment the next two lines to enable the admin:
@@ -14,6 +14,8 @@ urlpatterns = patterns('',
 
     url(r'^$', HomeView.as_view(), {'page': 1}, name="home"),
     url(r'^(?P<page>\d+)/$', HomeView.as_view(), name="home_paginated"),
+
+    url(r'^project/(?P<slug>\w+)/$', ProjectView.as_view(), name="project"),
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),

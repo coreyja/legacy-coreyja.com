@@ -9,7 +9,7 @@ class HomeView(ListView):
     model = Project
     template_name = 'Portfolio/grid.html'
 
-    model_query = Project.objects.filter(thumbnail__isnull=False)
+    model_query = Project.objects.all().exclude(thumbnail='')
 
     def dispatch(self, *args, **kwargs):
         #Store stuff so we don't have to calculate them in each of these functions
@@ -45,3 +45,11 @@ class HomeView(ListView):
         offsetEnd = offsetStart+6
 
         return self.model_query.prefetch_related('tags').order_by('id')[offsetStart:offsetEnd]
+
+
+class ProjectView(DetailView):
+    model = Project
+    template_name = 'Portfolio/detail.html'
+
+    def get_object(self, queryset=None):
+        return Project.objects.get(slug=self.kwargs['slug'])
