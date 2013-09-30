@@ -17,14 +17,20 @@ class ProjectTag(models.Model):
 
         super(ProjectTag, self).save(*args, **kwargs)
 
+    def __unicode__(self):
+        return self.name
+
 
 class Project(models.Model):
 
-    name = models.TextField(verbose_name='Project Name', name='Name')
+    name = models.TextField(verbose_name='Project Name')
     description = models.TextField()
     short_description = models.TextField()
 
-    pictures = models.ManyToManyField(ProjectPicture, related_name="projects")
+    pictures = models.ManyToManyField(ProjectPicture, related_name="projects", blank=True, null=True)
 
-    tags = models.ManyToManyField(ProjectTag, related_name="projects")
+    tags = models.ManyToManyField(ProjectTag, related_name="projects", blank=True, null=True)
+
+    def __unicode__(self):
+        return self.name
 
