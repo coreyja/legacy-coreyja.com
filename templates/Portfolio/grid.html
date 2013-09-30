@@ -1,8 +1,27 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    test
-    {% for project in object_list %}
-        <p>{{ project.name }}</p>
-    {% endfor %}
+
+    <h2 class="grid-title">Web + App Development</h2>
+
+    <div id="grid">
+        {% for project in object_list %}
+            <div class="portfolio-item" data-project-id="{{ project.id }}">
+                <img src="{{ project.thumbnail_url }}">
+
+                <div class="hover {{ project.get_hover_color }}">
+                    <h3 class="project-name">{{ project.name }}</h3>
+                    <h4 class="project-short-desc">{{ project.short_description }}</h4>
+                    <a class="view-project" href="#">more <i class="icon-angle-right"></i></a>
+                </div>
+            </div>
+        {% endfor %}
+
+        <div class="portfolio-item-placeholder"></div>
+        <div class="portfolio-item-placeholder"></div>
+        <div class="portfolio-item-placeholder"></div>
+
+    </div>
+
+
 {% endblock %}

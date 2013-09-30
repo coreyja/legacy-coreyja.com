@@ -102,6 +102,84 @@
   color: #bcbcbc;
   text-decoration: none;
 }
+h2.grid-title {
+  text-transform: uppercase;
+  font-family: 'Alternate Gothic';
+  font-size: 35px;
+  font-weight: normal;
+  color: #bcbcbc;
+  margin: 40px 0;
+}
+#grid {
+  width: 100%;
+  text-align: justify;
+}
+#grid .portfolio-item {
+  width: 410px;
+  height: 230px;
+  display: inline-block;
+  position: relative;
+  margin-bottom: 20px;
+}
+#grid .portfolio-item:hover .hover {
+  opacity: 1.0;
+  filter: "alpha(opacity=1.0)";
+}
+#grid .portfolio-item .hover {
+  display: block;
+  opacity: 0.0;
+  filter: "alpha(opacity=0.0)";
+  transition: all 0.5s ease;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+#grid .portfolio-item .hover.purple {
+  background: #aa66cc;
+}
+#grid .portfolio-item .hover.red {
+  background: #ff4444;
+}
+#grid .portfolio-item .hover.blue {
+  background: #33b5e5;
+}
+#grid .portfolio-item .hover.green {
+  background: #99cc00;
+}
+#grid .portfolio-item .hover.orange {
+  background: #ffbb33;
+}
+#grid .portfolio-item .hover h3.project-name {
+  color: #FFF;
+  font-size: 40px;
+  font-weight: normal;
+  text-transform: uppercase;
+  margin: 60px 0 0 0;
+}
+#grid .portfolio-item .hover h4.project-short-desc {
+  color: #FFF;
+  font-family: Times;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 20px;
+  margin: 20px 0;
+}
+#grid .portfolio-item .hover a.view-project {
+  color: #FFF;
+  text-decoration: none;
+  font-family: 'Alternate Gothic';
+  font-size: 32px;
+  font-weight: normal;
+}
+#grid .portfolio-item .hover a.view-project i {
+  font-size: 25px;
+}
+#grid .portfolio-item-placeholder {
+  width: 410px;
+  height: 0px;
+  display: inline-block;
+}
 html,
 body {
   width: 100%;

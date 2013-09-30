@@ -34,3 +34,10 @@ class Project(models.Model):
     def __unicode__(self):
         return self.name
 
+    def get_hover_color(self):
+        rem = self.id % 5
+
+        colors = ['red', 'purple', 'green', 'orange', 'blue']
+
+        return colors[rem]
+
