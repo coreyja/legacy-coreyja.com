@@ -5,7 +5,7 @@ from .models import Project
 
 class HomeView(ListView):
     model = Project
-    template_name = 'home.html'
+    template_name = 'Portfolio/grid.html'
 
     def get_queryset(self):
         return Project.objects.all()
