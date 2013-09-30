@@ -11,7 +11,8 @@ urlpatterns = patterns('',
     # url(r'^$', 'coreyja.views.home', name='home'),
     # url(r'^coreyja/', include('coreyja.foo.urls')),
 
-    url(r'^$', HomeView.as_view(), name="home"),
+    url(r'^$', HomeView.as_view(), {'page': 1}, name="home"),
+    url(r'^(?P<page>\d+)/$', HomeView.as_view(), name="home_paginated"),
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),

@@ -23,5 +23,17 @@
 
     </div>
 
+    {% if num_pages > 1 %}
+        <div id="pagination">
+            <ul class="links">
+                <li><a href="{% url 'home_paginated' page=prev_page %}">../</a></li>
+                {% for page in page_list %}
+                    <li><a href="{% url 'home_paginated' page=page %}" {% if page == current_page %}class="active"{% endif %}>{{ page }}</a></li>
+                {% endfor %}
+                <li class="next_page_link"><a href="{% url 'home_paginated' page=next_page %}">../</a></li>
+            </ul>
+        </div>
+    {% endif %}
+
 
 {% endblock %}
