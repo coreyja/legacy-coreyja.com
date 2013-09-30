@@ -19,11 +19,17 @@ class Project(models.Model):
 
     name = models.TextField(verbose_name='Project Name')
     description = models.TextField()
-    short_description = models.TextField()
+    tags = models.ManyToManyField(ProjectTag, related_name="projects", blank=True, null=True)
 
     thumbnail = models.ImageField(upload_to='./project-pics/thumbnails/', blank=True, null=True)
+    #Has 'pictures' related objects from ProjectPicture model
 
-    tags = models.ManyToManyField(ProjectTag, related_name="projects", blank=True, null=True)
+    slug = models.SlugField(blank=True, null=True)
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name)
+
+        super(Project, self).save(*args, **kwargs)
 
     def __unicode__(self):
         return self.name
