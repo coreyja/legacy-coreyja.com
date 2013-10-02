@@ -541,3 +541,7 @@ p.not-ready {
 p.not-ready a {
   color: #bcbcbc;
 }
+ul.projects li a {
+  font-size: 25px;
+  color: #bcbcbc;
+}
