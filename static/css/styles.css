@@ -108,6 +108,132 @@
   color: #bcbcbc;
   text-decoration: none;
 }
+body#resume {
+  font-family: Times !important;
+}
+body#resume div.wrap {
+  width: 900px;
+}
+body#resume .right h1#title {
+  font-size: 45px;
+  margin: 5px 0;
+}
+body#resume .right h2.subtitle {
+  font-size: 45px;
+  font-weight: normal;
+  margin: 0;
+}
+body#resume h1#name {
+  color: #000;
+  font-weight: normal !important;
+  font-size: 95px;
+  margin: 10px auto;
+}
+body#resume div#contact-info {
+  margin-top: 20px;
+}
+body#resume div.contact-block {
+  width: 300px;
+  float: left;
+  text-align: center;
+}
+body#resume div.contact-block h2 {
+  color: #000;
+  font-weight: normal !important;
+  font-family: Times;
+  margin: 0;
+}
+body#resume div.contact-block h2.title {
+  font-weight: bold !important;
+  font-family: Times;
+}
+body#resume div#work-experience h1.title {
+  font-weight: normal;
+  font-size: 50px;
+  color: #000;
+  margin: 10px 0;
+}
+body#resume div#work-experience div.experience {
+  overflow: hidden;
+  margin: 20px 0;
+}
+body#resume div#work-experience div.experience div.info {
+  color: #000;
+}
+body#resume div#work-experience div.experience div.info div.top-info {
+  overflow: hidden;
+}
+body#resume div#work-experience div.experience div.info div.top-info span {
+  display: inline-block;
+  float: left;
+  font-size: 25px;
+}
+body#resume div#work-experience div.experience div.info div.top-info span.job-title {
+  font-size: 30px;
+  width: 350px;
+}
+body#resume div#work-experience div.experience div.info div.top-info span.company-name {
+  width: 250px;
+}
+body#resume div#work-experience div.experience div.info div.top-info span.time {
+  float: right;
+  width: 300px;
+  text-align: right;
+}
+body#resume div#work-experience div.experience div.info div.description {
+  margin-top: 10px;
+  font-size: 20px;
+}
+body#resume div#education h1.title {
+  font-weight: normal;
+  font-size: 50px;
+  color: #000;
+  margin: 10px 0;
+}
+body#resume div#education div.info {
+  color: #000;
+}
+body#resume div#education div.info div.top-info {
+  overflow: hidden;
+}
+body#resume div#education div.info div.top-info span {
+  display: inline-block;
+  float: left;
+  font-size: 25px;
+}
+body#resume div#education div.info div.top-info span.job-title {
+  font-size: 30px;
+  width: 500px;
+}
+body#resume div#education div.info div.top-info span.company-name {
+  width: 200px;
+}
+body#resume div#education div.info div.top-info span.time {
+  float: right;
+  width: 200px;
+  text-align: right;
+}
+body#resume div#education div.info div.top-info span.status {
+  width: 300px;
+}
+body#resume div#education div.info div.top-info span.gpa {
+  width: 500px;
+  float: right;
+  text-align: right;
+}
+body#resume div#education div.info div.top-info hr {
+  clear: both;
+  border: none;
+}
+body#resume div#education div.info div.description {
+  margin-top: 10px;
+  font-size: 20px;
+}
+body#resume p.references {
+  text-align: center;
+  color: #000;
+  font-size: 18px;
+}
 /*---------------------------------------------------
     LESS Elements 0.9
   ---------------------------------------------------
@@ -279,4 +405,130 @@ div.right {
   border-bottom: 0 dotted;
   border-left: 4px solid transparent;
   content: "";
+}
+body#resume {
+  font-family: Times !important;
+}
+body#resume div.wrap {
+  width: 900px;
+}
+body#resume .right h1#title {
+  font-size: 45px;
+  margin: 5px 0;
+}
+body#resume .right h2.subtitle {
+  font-size: 45px;
+  font-weight: normal;
+  margin: 0;
+}
+body#resume h1#name {
+  color: #000;
+  font-weight: normal !important;
+  font-size: 95px;
+  margin: 10px auto;
+}
+body#resume div#contact-info {
+  margin-top: 20px;
+}
+body#resume div.contact-block {
+  width: 300px;
+  float: left;
+  text-align: center;
+}
+body#resume div.contact-block h2 {
+  color: #000;
+  font-weight: normal !important;
+  font-family: Times;
+  margin: 0;
+}
+body#resume div.contact-block h2.title {
+  font-weight: bold !important;
+  font-family: Times;
+}
+body#resume div#work-experience h1.title {
+  font-weight: normal;
+  font-size: 50px;
+  color: #000;
+  margin: 10px 0;
+}
+body#resume div#work-experience div.experience {
+  overflow: hidden;
+  margin: 20px 0;
+}
+body#resume div#work-experience div.experience div.info {
+  color: #000;
+}
+body#resume div#work-experience div.experience div.info div.top-info {
+  overflow: hidden;
+}
+body#resume div#work-experience div.experience div.info div.top-info span {
+  display: inline-block;
+  float: left;
+  font-size: 25px;
+}
+body#resume div#work-experience div.experience div.info div.top-info span.job-title {
+  font-size: 30px;
+  width: 350px;
+}
+body#resume div#work-experience div.experience div.info div.top-info span.company-name {
+  width: 250px;
+}
+body#resume div#work-experience div.experience div.info div.top-info span.time {
+  float: right;
+  width: 300px;
+  text-align: right;
+}
+body#resume div#work-experience div.experience div.info div.description {
+  margin-top: 10px;
+  font-size: 20px;
+}
+body#resume div#education h1.title {
+  font-weight: normal;
+  font-size: 50px;
+  color: #000;
+  margin: 10px 0;
+}
+body#resume div#education div.info {
+  color: #000;
+}
+body#resume div#education div.info div.top-info {
+  overflow: hidden;
+}
+body#resume div#education div.info div.top-info span {
+  display: inline-block;
+  float: left;
+  font-size: 25px;
+}
+body#resume div#education div.info div.top-info span.job-title {
+  font-size: 30px;
+  width: 500px;
+}
+body#resume div#education div.info div.top-info span.company-name {
+  width: 200px;
+}
+body#resume div#education div.info div.top-info span.time {
+  float: right;
+  width: 200px;
+  text-align: right;
+}
+body#resume div#education div.info div.top-info span.status {
+  width: 300px;
+}
+body#resume div#education div.info div.top-info span.gpa {
+  width: 500px;
+  float: right;
+  text-align: right;
+}
+body#resume div#education div.info div.top-info hr {
+  clear: both;
+  border: none;
+}
+body#resume div#education div.info div.description {
+  margin-top: 10px;
+  font-size: 20px;
+}
+body#resume p.references {
+  text-align: center;
+  color: #000;
+  font-size: 18px;
 }

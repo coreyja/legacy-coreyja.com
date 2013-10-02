@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume - Coreyja</title>
+
+    {% if debug %}
+        <link href="/static/css/styles.css" rel="stylesheet">
+        <link href="/static/css/FontAwesome/font-awesome.css" rel="stylesheet">
+    {% else %}
+        <link href="/static/css/styles.min.css" rel="stylesheet">
+        <link href="/static/css/FontAwesome/font-awesome.min.css" rel="stylesheet">
+    {% endif %}
+</head>
+<body id="resume">
+    <div class="wrap">
+        <div class="left">
+            <h1 id="name">Corey Alexander</h1>
+        </div>
+        <div class="right">
+            <h1 id="title"><span class="light-gray">../</span>COREY<span class="light-gray">JA</span></h1>
+            <h2 class="subtitle">coreyja.com</h2>
+        </div>
+    </div>
+    <div class="colors-bar">
+        <span class="red"></span>
+        <span class="purple"></span>
+        <span class="green"></span>
+        <span class="orange"></span>
+        <span class="blue"></span>
+    </div>
+
+    <div id="contact-info" class="wrap">
+        <div class="contact-block">
+            <h2 class="title">Email</h2>
+            <h2>coreyja@gmail.com</h2>
+        </div>
+
+        <div class="contact-block">
+            <h2 class="title">Phone</h2>
+            <h2 class="contact-info">(720) 771-0574</h2>
+        </div>
+
+        <div class="contact-block">
+            <h2 class="title">Address</h2>
+            <h2 class="contact-info" id="address">5500 Wabash Ave Box 2058<br>Terre Haute, IN 47803<br></h2>
+        </div>
+    </div>
+
+    <div id="work-experience" class="wrap">
+        <h1 class="title">Work Experience</h1>
+
+        <div class="experience">
+            <div class="info">
+                <div class="top-info">
+                    <span class="job-title">Freelance Web Developer</span>
+                    <span class="company-name"> </span>
+                    <span class="time">Aug 2010 - Present</span>
+                </div>
+                <div class="description">
+                    Worked as a developer on many different websites and webapps using a variety of tools.<br>
+                    For a complete portfolio of projects visit coreyja.com<br>
+                    Some of the languages/tools used include: HTML5, CSS3, Django, jQuery and Wordpress<br>
+                </div>
+            </div>
+        </div>
+
+        <div class="experience">
+            <div class="info">
+                <div class="top-info">
+                    <span class="job-title">Junior Developer</span>
+                    <span class="company-name">Giftovus</span>
+                    <span class="time">Summer 2013</span>
+                </div>
+                <div class="description">
+                    Worked as a web developer with the Giftovus team.<br>
+                    Worked on the front end and backend of the Giftovus web app (giftovus.com).<br>
+                    Wrote code that was used in the live app.<br>
+                    Gained experience working in a startup environment.<br>
+                </div>
+            </div>
+        </div>
+
+        <div class="experience">
+            <div class="info">
+                <div class="top-info">
+                    <span class="job-title">Web Master</span>
+                    <span class="company-name">ATO Chapter</span>
+                    <span class="time">2011 - Present</span>
+                </div>
+                <div class="description">
+                    Voted in to the position of Web master and Website administrator by my brothers.<br>
+                    Maintain and develop current site including updating information and managing brother login information.<br>
+                    Produced and open sourced Rush Website https://github.com/coreyja/fraternet<br>
+                </div>
+            </div>
+        </div>
+
+        <div class="experience">
+            <div class="info">
+                <div class="top-info">
+                    <span class="job-title">Intern</span>
+                    <span class="company-name">Centaur Technology</span>
+                    <span class="time">Summer 2010</span>
+                </div>
+                <div class="description">
+                    Tested hardware, aimed at finding CPU bugs<br>
+                    Wrote automated programs to detect hardware bugs<br>
+                    Developed programs dealing with the encoding and decoding of MSR and CPUID values.<br>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div id="education" class="wrap">
+        <h1 class="title">Education</h1>
+
+        <div class="info">
+            <div class="top-info">
+                <span class="job-title">Rose-Hulman Institute of Technology</span>
+                <span class="company-name">CS/SE/MA/Econ</span>
+                <span class="time">Class of 2015</span>
+                <hr>
+                <span class="status">Status: Junior</span>
+                <span class="gpa">GPA: 3.23 Major Specific: 3.91</span>
+            </div>
+            <div class="description">
+                Pursuing a Bachelors of Science quadruple major in Computer Science, Software Engineering, Mathematics and Economics
+            </div>
+        </div>
+    </div>
+
+    <p class="references">References available upon request.</p>
+
+
+</body>
+</html>
