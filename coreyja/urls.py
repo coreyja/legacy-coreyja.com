@@ -14,8 +14,10 @@ urlpatterns = patterns('',
     # url(r'^$', 'coreyja.views.home', name='home'),
     # url(r'^coreyja/', include('coreyja.foo.urls')),
 
-    url(r'^$', HomeView.as_view(), {'page': 1}, name="home"),
-    url(r'^(?P<page>\d+)/$', HomeView.as_view(), name="home_paginated"),
+    url(r'^$', TemplateView.as_view(template_name="temp-home.html"), name="home"),
+
+    # url(r'^$', HomeView.as_view(), {'page': 1}, name="home"),
+    # url(r'^(?P<page>\d+)/$', HomeView.as_view(), name="home_paginated"),
 
     url(r'^project/(?P<slug>\w+)/$', ProjectView.as_view(), name="project"),
     url(r'^resume/$', TemplateView.as_view(template_name="resume.html"), name="project"),

@@ -388,6 +388,9 @@ div.wrap {
 span.light-gray {
   color: #bcbcbc;
 }
+span.dark-gray {
+  color: #9a9a9a;
+}
 div.left {
   float: left;
 }
@@ -531,4 +534,10 @@ body#resume p.references {
   text-align: center;
   color: #000;
   font-size: 18px;
+}
+p.not-ready {
+  font-size: 30px;
+}
+p.not-ready a {
+  color: #bcbcbc;
 }
