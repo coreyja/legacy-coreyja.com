@@ -462,6 +462,7 @@ h2.grid-title {
 #project-detail-outer #gallery .main-image img {
   display: block;
   margin: auto;
+  max-width: 500px;
 }
 #project-detail-outer #gallery .thumbnails {
   margin-top: 50px;
