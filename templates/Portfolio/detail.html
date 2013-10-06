@@ -11,11 +11,11 @@
             <div id="gallery">
 
                 <div class="main-image">
-                    <img src="{{ object.get_first_picture.picture.url }}">
+                    <img src="{{ project.get_first_picture.picture.url }}">
                 </div>
 
                 <div class="thumbnails">
-                {% for img in object.get_six_pictures %}
+                {% for img in project.pictures.all|slice:":6" %}
                     <img src="{{ img.picture.url }}">
                 {% endfor %}
                 </div>
@@ -25,12 +25,16 @@
 
         <div class="right">
             <h1 class="title">
-                {{ object.name }}
+                {{ project.name }}
             </h1>
             <h2 class="subtitle">{{ project.get_tag_string }}</h2>
 
+            {% if project.url %}
+                <h2 class="url"><a href="{{ project.url }}" target="_blank">{{ project.url }}</a></h2>
+            {% endif %}
+
             {% autoescape off %}
-            {{ object.description|description_split }}
+            {{ project.description|description_split }}
             {% endautoescape %}
         </div>
 

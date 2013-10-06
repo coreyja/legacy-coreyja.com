@@ -50,9 +50,6 @@ class Project(models.Model):
     def get_tag_string(self):
         return ', '.join([str(x) for x in self.tags.all()])
 
-    def get_six_pictures(self):
-        return self.pictures.all()[:6]
-
     def get_first_picture(self):
         if self.pictures.count():
             return self.pictures.all()[0]
