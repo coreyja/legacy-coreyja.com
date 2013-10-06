@@ -22,6 +22,8 @@ class Project(models.Model):
     description = models.TextField()
     tags = models.ManyToManyField(ProjectTag, related_name="projects", blank=True, null=True)
 
+    url = models.URLField(blank=True, null=True)
+
     thumbnail = models.ImageField(upload_to='./project-pics/thumbnails/', blank=True, null=True)
     #Has 'pictures' related objects from ProjectPicture model
 
