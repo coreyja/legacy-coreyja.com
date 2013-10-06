@@ -1,5 +1,42 @@
 {% extends 'base.html' %}
+{% load portfolio_filters %}
 
 {% block content %}
-    {{ object }}
+    <div id="project-detail-outer">
+        <div id="color-bar" class="{{ project.get_hover_color }}">
+            <a href="{% url 'home' %}"><i class="icon-remove"></i></a>
+        </div>
+
+        <div class="left">
+            <div id="gallery">
+
+                <div class="main-image">
+                    <img src="{{ object.get_first_picture.picture.url }}">
+                </div>
+
+                <div class="thumbnails">
+                {% for img in object.get_six_pictures %}
+                    <img src="{{ img.picture.url }}">
+                {% endfor %}
+                </div>
+
+            </div>
+        </div>
+
+        <div class="right">
+            <h1 class="title">
+                {{ object.name }}
+            </h1>
+            <h2 class="subtitle">{{ project.get_tag_string }}</h2>
+
+            {% autoescape off %}
+            {{ object.description|description_split }}
+            {% endautoescape %}
+        </div>
+
+        <div id="pagination">
+
+        </div>
+
+    </div>
 {% endblock %}

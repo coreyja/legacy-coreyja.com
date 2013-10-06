@@ -363,6 +363,109 @@ h2.grid-title {
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+@font-face {
+  font-family: 'Alternate Gothic';
+  src: url('/static/fonts/AlternateGothic/AlternateGothicNo1-webfont.eot');
+  src: url('/static/fonts/AlternateGothic/AlternateGothicNo1-webfont.eot?#iefix') format('embedded-opentype'), url('/static/fonts/AlternateGothic/AlternateGothicNo1-webfont.woff') format('woff'), url('/static/fonts/AlternateGothic/AlternateGothicNo1-webfont.ttf') format('truetype'), url('/static/fonts/AlternateGothic/AlternateGothicNo1-webfont.svg#alternate_gothic_fs_no_1Rg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+#project-detail-outer {
+  display: block;
+  width: 1274px;
+  height: 625px;
+  overflow: hidden;
+  position: relative;
+  margin: 20px auto;
+  border-width: 3px;
+  border-color: #bcbcbc;
+  border-style: solid;
+}
+#project-detail-outer div#color-bar {
+  width: 100%;
+  height: 50px;
+  margin-bottom: 50px;
+}
+#project-detail-outer div#color-bar.purple {
+  background: #aa66cc;
+}
+#project-detail-outer div#color-bar.red {
+  background: #ff4444;
+}
+#project-detail-outer div#color-bar.blue {
+  background: #33b5e5;
+}
+#project-detail-outer div#color-bar.green {
+  background: #99cc00;
+}
+#project-detail-outer div#color-bar.orange {
+  background: #ffbb33;
+}
+#project-detail-outer div#color-bar a,
+#project-detail-outer div#color-bar a:visited,
+#project-detail-outer div#color-bar a:hover {
+  color: #FFF;
+  text-decoration: none;
+  font-size: 40px;
+  line-height: 50px;
+  margin-right: 10px;
+  float: right;
+}
+#project-detail-outer div.right {
+  display: block;
+  width: 50%;
+  float: right;
+}
+#project-detail-outer div.left {
+  display: block;
+  width: 50%;
+  float: left;
+}
+#project-detail-outer h1.title {
+  font-size: 60px;
+  font-weight: normal;
+  margin: 0;
+}
+#project-detail-outer h2.subtitle {
+  font-family: 'Times';
+  font-weight: normal;
+  font-style: italic;
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+#project-detail-outer p.desc {
+  font-size: 14px;
+}
+#project-detail-outer #gallery .main-image {
+  width: 500px;
+  margin: auto;
+}
+#project-detail-outer #gallery .main-image img {
+  display: block;
+  margin: auto;
+}
+#project-detail-outer #gallery .thumbnails {
+  margin-top: 50px;
+  padding: 0 20px;
+}
+#project-detail-outer #gallery .thumbnails img {
+  width: 100px;
+  cursor: pointer;
+  margin: 0 10px;
+}
+#project-detail-outer #pagination {
+  height: 50px;
+  width: 100%;
+  display: block;
+  position: absolute;
+  bottom: 0;
+}
 html,
 body {
   width: 100%;
