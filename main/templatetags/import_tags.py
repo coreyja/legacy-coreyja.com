@@ -4,8 +4,8 @@ from coreyja import settings
 
 register = template.Library()
 
-@register.tag(name="import_compiled_js")
-def import_compiled_js_tag(parser, token):
+@register.tag(name="import_js")
+def import_js_tag(parser, token):
     try:
         # split_contents() knows not to split quoted strings.
         tag_name, format_string = token.split_contents()
@@ -14,10 +14,10 @@ def import_compiled_js_tag(parser, token):
     if not (format_string[0] == format_string[-1] and format_string[0] in ('"', "'")):
         raise template.TemplateSyntaxError("%r tag's argument should be in quotes" % tag_name)
 
-    return CompiledJSNode(format_string[1:-1])
+    return ImportJSNode(format_string[1:-1])
 
 
-class CompiledJSNode(template.Node):
+class ImportJSNode(template.Node):
     def __init__(self, format_string):
         if settings.DEBUG:
             self.format_string = '%s.js' % format_string
@@ -26,11 +26,11 @@ class CompiledJSNode(template.Node):
 
     def render(self, context):
 
-        return mark_safe('<script type="text/javascript" src="/static/js/compiled/%s"></script>' % self.format_string)
+        return mark_safe('<script type="text/javascript" src="/static/js/%s"></script>' % self.format_string)
 
 
-@register.tag(name="import_compiled_css")
-def import_compiled_css_tag(parser, token):
+@register.tag(name="import_css")
+def import_css_tag(parser, token):
     try:
         # split_contents() knows not to split quoted strings.
         tag_name, format_string = token.split_contents()
@@ -39,10 +39,10 @@ def import_compiled_css_tag(parser, token):
     if not (format_string[0] == format_string[-1] and format_string[0] in ('"', "'")):
         raise template.TemplateSyntaxError("%r tag's argument should be in quotes" % tag_name)
 
-    return CompiledCSSNode(format_string[1:-1])
+    return ImportCSSNode(format_string[1:-1])
 
 
-class CompiledCSSNode(template.Node):
+class ImportCSSNode(template.Node):
     def __init__(self, format_string):
         if settings.DEBUG:
             self.format_string = '%s.css' % format_string
