@@ -33,9 +33,7 @@
                 <h2 class="url"><a href="{{ project.url }}" target="_blank">{{ project.url }}</a></h2>
             {% endif %}
 
-            {% autoescape off %}
             {{ project.description|description_split }}
-            {% endautoescape %}
         </div>
 
         <div id="pagination">
@@ -43,4 +41,12 @@
         </div>
 
     </div>
+{% endblock %}
+
+{% block extra_js %}
+    {% if debug %}
+        <script src="/static/js/compiled/detail-gallery.js" type="text/javascript"></script>
+    {% else %}
+         <script src="/static/js/compiled/detail-gallery.min.js" type="text/javascript"></script>
+    {% endif %}
 {% endblock %}
