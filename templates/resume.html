@@ -1,15 +1,13 @@
+{% load import_tags %}
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Resume - Coreyja</title>
 
-    {% if debug %}
-        <link href="/static/css/styles.css" rel="stylesheet">
-        <link href="/static/css/FontAwesome/font-awesome.css" rel="stylesheet">
-    {% else %}
-        <link href="/static/css/styles.min.css" rel="stylesheet">
-        <link href="/static/css/FontAwesome/font-awesome.min.css" rel="stylesheet">
-    {% endif %}
+    {% import_compiled_css "styles" %}
+    {% import_compiled_css "FontAwesome/font-awesome" %}
+
 </head>
 <body id="resume">
     <div class="wrap">

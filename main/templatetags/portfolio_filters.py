@@ -23,4 +23,4 @@ def desc_split_filter(value, autoescape=None):
             continue
         output += '<p class="desc">%s</p>' % esc(v)
 
-    return  mark_safe(output)
+    return mark_safe(output)
