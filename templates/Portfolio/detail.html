@@ -2,6 +2,8 @@
 {% load portfolio_filters %}
 {% load import_tags %}
 
+{% load thumbnail %}
+
 {% block content %}
     <div id="project-detail-outer">
         <div id="color-bar" class="{{ project.get_hover_color }}">
@@ -12,12 +14,20 @@
             <div id="gallery">
 
                 <div class="main-image">
-                    <img src="{{ project.get_first_picture.picture.url }}">
+                {% for img in project.pictures.all %}
+                    <a href="{{ img.picture.url }}" data-lightbox="gallery">
+                        {% thumbnail img.picture "550x350" as im %}
+                            <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" data-picture-id="{{ img.id }}" class="{% if forloop.first %}active{% endif %}">
+                        {% endthumbnail %}
+                    </a>
+                {% endfor %}
                 </div>
 
                 <div class="thumbnails">
-                {% for img in project.pictures.all|slice:":6" %}
-                    <img src="{{ img.picture.url }}">
+                {% for img in project.pictures.all|slice:":3" %}
+                    {% thumbnail img.picture "160x100" crop="center" as im %}
+                        <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" data-picture-id="{{ img.id }}">
+                    {% endthumbnail %}
                 {% endfor %}
                 </div>
 
@@ -37,9 +47,9 @@
             {{ project.description|description_split }}
         </div>
 
-        <div id="pagination">
-
-        </div>
+{#        <div id="pagination">#}
+{##}
+{#        </div>#}
 
     </div>
 {% endblock %}

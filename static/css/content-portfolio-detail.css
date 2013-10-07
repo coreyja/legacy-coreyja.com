@@ -91,22 +91,31 @@
   font-size: 14px;
 }
 #project-detail-outer #gallery .main-image {
-  width: 500px;
+  width: 550px;
+  height: 350px;
   margin: auto;
 }
 #project-detail-outer #gallery .main-image img {
-  display: block;
+  display: none;
   margin: auto;
-  max-width: 500px;
+  max-width: 550px;
+  max-height: 350px;
+}
+#project-detail-outer #gallery .main-image img.active {
+  display: block;
 }
 #project-detail-outer #gallery .thumbnails {
   margin-top: 50px;
   padding: 0 20px;
+  text-align: center;
 }
 #project-detail-outer #gallery .thumbnails img {
-  width: 100px;
+  max-width: 160px;
+  max-height: 100px;
+  display: inline-block;
   cursor: pointer;
   margin: 0 10px;
+  border: #bcbcbc solid 1px;
 }
 #project-detail-outer #pagination {
   height: 50px;
