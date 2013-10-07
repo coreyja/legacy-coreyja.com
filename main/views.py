@@ -44,12 +44,46 @@ class HomeView(ListView):
         offsetStart = 6*(self.page-1)
         offsetEnd = offsetStart+6
 
-        return self.model_query.prefetch_related('tags').order_by('id')[offsetStart:offsetEnd]
+        return self.model_query.prefetch_related('tags', 'links').order_by('id')[offsetStart:offsetEnd]
 
 
 class ProjectView(DetailView):
     model = Project
     template_name = 'Portfolio/detail.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(ProjectView, self).get_context_data(**kwargs)
+
+        projects = Project.objects.all().order_by('id')
+
+        result = [(p.id, p.get_url) for p in projects]
+
+        prev = None
+        next = False
+        i = -1
+        for p in projects:
+            if next:
+                context['next_project'] = (p.id, p.get_url())
+                break
+            if p.id == self.object.id:
+                if prev:
+                    context['prev_project'] = (prev.id, prev.get_url())
+                next = True
+
+            prev = p
+            i += 1
+
+        if 'next_project' not in context:
+            context['next_project'] = (self.object.id, self.object.get_url())
+        if 'prev_project' not in context:
+            context['prev_project'] = (self.object.id, self.object.get_url())
+
+        context['project_links'] = result
+        context['num_projects'] = len(result)
+
+        context['grid_page'] = (i / 6)+1
+
+        return context
 
     def get_object(self, queryset=None):
         return Project.objects.prefetch_related('pictures', 'tags', 'links').get(slug=self.kwargs['slug'])

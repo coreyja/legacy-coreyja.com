@@ -443,15 +443,17 @@ h2.grid-title {
   margin-right: 10px;
   float: right;
 }
-#project-detail-outer div.right {
-  display: block;
-  width: 50%;
-  float: right;
-  overflow: hidden;
-}
+#project-detail-outer div.right,
 #project-detail-outer div.left {
   display: block;
   width: 50%;
+  overflow: hidden;
+  height: 485px;
+}
+#project-detail-outer div.right {
+  float: right;
+}
+#project-detail-outer div.left {
   float: left;
 }
 #project-detail-outer div.info {
@@ -514,7 +516,7 @@ h2.grid-title {
   display: block;
 }
 #project-detail-outer #gallery .thumbnails {
-  margin-top: 50px;
+  margin-top: 10px;
   padding: 0 20px;
   text-align: center;
 }
@@ -527,7 +529,6 @@ h2.grid-title {
   border: #bcbcbc solid 1px;
 }
 #project-detail-outer #pagination {
-  height: 50px;
   width: 100%;
   display: block;
   position: absolute;

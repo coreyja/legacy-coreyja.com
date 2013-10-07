@@ -31,7 +31,7 @@
     </div>
 
     {% if num_pages > 1 %}
-        <div id="pagination">
+        <div id="pagination" class="grid">
             <ul class="links">
                 <li><a href="{% url 'home_paginated' page=prev_page %}">../</a></li>
                 {% for page in page_list %}

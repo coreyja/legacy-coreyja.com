@@ -7,7 +7,7 @@
 {% block content %}
     <div id="project-detail-outer">
         <div id="color-bar" class="{{ project.hover_color }}">
-            <a href="{% url 'home' %}"><i class="icon-remove"></i></a>
+            <a href="{% url 'home_paginated' page=grid_page %}"><i class="icon-remove"></i></a>
         </div>
 
         <div class="left">
@@ -54,9 +54,22 @@
             {{ project.description|description_split }}
         </div>
 
-{#        <div id="pagination">#}
-{##}
-{#        </div>#}
+        <div id="pagination">
+        {% if num_projects > 1 %}
+            <ul class="links">
+
+            <li><a href="{{ prev_project.1 }}" data-project-id="{{ prev_project.0 }}">../</a></li>
+
+            {% for id, link in project_links %}
+                <li><a href="{{ link }}" data-project-id="{{ id }}" {% if id == object.id %}class="active"{% endif %}>{{ forloop.counter }}</a></li>
+            {% endfor %}
+
+            <li class="next_page_link"><a href="{{ next_project.1 }}" data-project-id="{{ next_project.0 }}">../</a></li>
+
+
+            </ul>
+        {% endif %}
+        </div>
 
     </div>
 {% endblock %}
