@@ -6,3 +6,14 @@ if !String.prototype.format
       return this.replace(/{(\d+)}/g, (match, number) ->
         return if typeof args[number] != 'undefined' then args[number] else match
       )
+
+jQuery ->
+  # About Me Drawer
+  $('h3#about-link').click( ()->
+    $('div#about-me').slideToggle(400, () ->
+      if $(this).css('display') == 'block'
+        $('h3#about-link i').removeClass().addClass('icon-angle-up')
+      else
+        $('h3#about-link i').removeClass().addClass('icon-angle-down')
+    )
+  )

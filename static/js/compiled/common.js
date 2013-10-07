@@ -14,4 +14,16 @@
     };
   }
 
+  jQuery(function() {
+    return $('h3#about-link').click(function() {
+      return $('div#about-me').slideToggle(400, function() {
+        if ($(this).css('display') === 'block') {
+          return $('h3#about-link i').removeClass().addClass('icon-angle-up');
+        } else {
+          return $('h3#about-link i').removeClass().addClass('icon-angle-down');
+        }
+      });
+    });
+  });
+
 }).call(this);
