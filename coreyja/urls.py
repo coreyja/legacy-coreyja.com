@@ -17,7 +17,7 @@ urlpatterns = patterns('',
     url(r'^$', HomeView.as_view(), {'page': 1}, name="home"),
     url(r'^(?P<page>\d+)/$', HomeView.as_view(), name="home_paginated"),
 
-    url(r'^project/(?P<slug>\w+)/$', ProjectView.as_view(), name="project"),
+    url(r'^project/(?P<slug>[\w-]+)/$', ProjectView.as_view(), name="project"),
     url(r'^resume/$', TemplateView.as_view(template_name="resume.html"), name="project"),
 
     # Uncomment the next line to enable the admin:
