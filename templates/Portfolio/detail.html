@@ -44,7 +44,11 @@
     </div>
 {% endblock %}
 
+{% block extra_css %}
+    {% import_css "lightbox/lightbox" %}
+{% endblock %}
+
 {% block extra_js %}
-    {% import_js "/lightbox/lightbox-2.6" %}
-    {% import_js "/compiled/detail-gallery" %}
+    {% import_js "lightbox/lightbox-2.6" %}
+    {% import_js "compiled/detail-gallery" %}
 {% endblock %}
