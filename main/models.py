@@ -1,6 +1,7 @@
 from django.core.urlresolvers import reverse
 from django.db import models
 from django.template.defaultfilters import slugify
+from sorl.thumbnail import ImageField
 
 
 class ProjectTag(models.Model):
@@ -24,7 +25,7 @@ class Project(models.Model):
 
     url = models.URLField(blank=True, null=True)
 
-    thumbnail = models.ImageField(upload_to='./project-pics/thumbnails/', blank=True, null=True)
+    thumbnail = ImageField(upload_to='./project-pics/thumbnails/', blank=True, null=True)
     #Has 'pictures' related objects from ProjectPicture model
 
     slug = models.SlugField(blank=True, null=True)
@@ -40,7 +41,7 @@ class Project(models.Model):
     def get_url(self):
         return reverse('project', kwargs={'slug':self.slug})
 
-    def get_hover_color(self):
+    def hover_color(self):
         rem = self.id % 5
 
         colors = ['red', 'purple', 'green', 'orange', 'blue']
@@ -57,7 +58,7 @@ class Project(models.Model):
 
 class ProjectPicture(models.Model):
 
-    picture = models.ImageField(upload_to='./project-pics/')
+    picture = ImageField(upload_to='./project-pics/')
     project = models.ForeignKey(Project, related_name="pictures", blank=True, null=True)
 
     def __unicode__(self):

@@ -12,7 +12,7 @@
                     <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" data-picture-id="{{ img.id }}">
                 {% endthumbnail %}
 
-                <div class="hover {{ project.get_hover_color }}">
+                <div class="hover {{ project.hover_color }}">
                     <h3 class="project-name">{{ project.name }}</h3>
                     <h4 class="project-short-desc">{{ project.get_tag_string }}</h4>
                     <a class="view-project" href="{{ project.get_url }}">more <i class="icon-angle-right"></i></a>
