@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load thumbnail %}
 
 {% block content %}
 
@@ -7,7 +8,9 @@
     <div id="grid">
         {% for project in object_list %}
             <div class="portfolio-item" data-project-id="{{ project.id }}">
-                <img src="{{ project.thumbnail.url }}">
+                {% thumbnail project.thumbnail "410x230" crop="center" as im %}
+                    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" data-picture-id="{{ img.id }}">
+                {% endthumbnail %}
 
                 <div class="hover {{ project.get_hover_color }}">
                     <h3 class="project-name">{{ project.name }}</h3>
