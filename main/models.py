@@ -83,12 +83,7 @@ class ProjectLink(models.Model):
 
     def render_full_link(self):
 
-        if len(self.url) > 30:
-            title = self.project.name
-        else:
-            title = self.url()
-
-        result = '<h2 class="url"><a href="%s" target="_blank">%s %s</a></h2>' % (self.url, self.icon_html(), title)
+        result = '<h2 class="url"><a href="%s" target="_blank">%s %s</a></h2>' % (self.url, self.icon_html(), self.url)
 
         return mark_safe(result)
 
