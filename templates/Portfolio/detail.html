@@ -40,10 +40,6 @@
             </h1>
             <h2 class="subtitle">{{ project.get_tag_string }}</h2>
 
-            {% if project.url %}
-                <h2 class="url"><a href="{{ project.url }}" target="_blank">{{ project.url }}</a></h2>
-            {% endif %}
-
             {{ project.description|description_split }}
         </div>
 

@@ -23,12 +23,13 @@ class Project(models.Model):
     description = models.TextField()
     tags = models.ManyToManyField(ProjectTag, related_name="projects", blank=True, null=True)
 
-    url = models.URLField(blank=True, null=True)
-
     thumbnail = ImageField(upload_to='./project-pics/thumbnails/', blank=True, null=True)
-    #Has 'pictures' related objects from ProjectPicture model
 
     slug = models.SlugField(blank=True, null=True)
+
+    #Has 'pictures' related objects from ProjectPicture model
+
+    #Has 'links' related objects from ProjectLinks
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)
@@ -63,3 +64,17 @@ class ProjectPicture(models.Model):
 
     def __unicode__(self):
         return self.picture.name
+
+
+class ProjectLink(models.Model):
+    LINK_TYPES = (
+        ('W', 'WWW'),
+        ('G', 'GitHub'),
+    )
+    type = models.CharField(max_length=1, choices=LINK_TYPES)
+
+    url = models.URLField()
+    project = models.ForeignKey(Project, related_name="links")
+
+    def __unicode__(self):
+        return self.url
