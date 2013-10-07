@@ -551,11 +551,11 @@ h2.grid-title {
 #about-me {
   display: none;
   margin-top: 20px;
-  height: 345px;
+  height: 365px;
 }
 #about-me .wrap {
   width: 1100px;
-  height: 315px;
+  height: 335px;
   overflow: hidden;
 }
 #about-me .wrap div.left,
