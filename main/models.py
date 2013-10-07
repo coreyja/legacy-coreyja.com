@@ -81,9 +81,17 @@ class ProjectLink(models.Model):
     def __unicode__(self):
         return self.url
 
-    def render(self):
-        icon_html = ''
+    def render_full_link(self):
+        result = '<h2 class="url"><a href="%s" target="_blank">%s %s</a></h2>' % (self.url, self.icon_html(), self.url)
 
+        return mark_safe(result)
+
+    def render_icon_link(self):
+        result = '<a href="%s" target="_blank">%s</a>' % (self.url, self.icon_html())
+
+        return mark_safe(result)
+
+    def icon(self):
         if self.type == 'W':
             icon = 'icon-globe'
         elif self.type == 'G':
@@ -93,9 +101,14 @@ class ProjectLink(models.Model):
         else:
             icon = ''
 
-        if icon:
-            icon_html = '<i class="%s"></i>' % icon
+        return icon
 
-        result = '<h2 class="url"><a href="%s" target="_blank">%s %s</a></h2>' % (self.url, icon_html, self.url)
+    def icon_html(self):
+        icon = self.icon()
+
+        if icon:
+            result = '<i class="%s"></i>' % icon
+        else:
+            result = ''
 
         return mark_safe(result)

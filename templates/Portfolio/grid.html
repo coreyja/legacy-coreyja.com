@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load import_tags %}
 {% load thumbnail %}
 
 {% block content %}
@@ -13,9 +14,12 @@
                 {% endthumbnail %}
 
                 <div class="hover {{ project.hover_color }}">
-                    <h3 class="project-name">{{ project.name }}</h3>
-                    <h4 class="project-short-desc">{{ project.get_tag_string }}</h4>
-                    <a class="view-project" href="{{ project.get_url }}">more <i class="icon-angle-right"></i></a>
+                    <div class="not-centered">
+                        <h3 class="project-name">{{ project.name }}</h3>
+                        <h4 class="project-tags">{{ project.get_tag_string }}</h4>
+                        <h4 class="project-link-icons">{% for link in project.links.all|slice:":3" %}{{ link.render_icon_link }}{% endfor %}</h4>
+                        <a class="view-project" href="{{ project.get_url }}">more <i class="icon-angle-right"></i></a>
+                    </div>
                 </div>
             </div>
         {% endfor %}
@@ -38,5 +42,8 @@
         </div>
     {% endif %}
 
+{% endblock %}
 
+{% block extra_js %}
+    {% import_js "compiled/grid" %}
 {% endblock %}

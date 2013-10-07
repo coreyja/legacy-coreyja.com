@@ -44,7 +44,7 @@
                 </div>
                 <div class="links">
                 {% for link in project.links.all|slice:":3" %}
-                    {{ link.render }}
+                    {{ link.render_full_link }}
                 {% endfor %}
                 </div>
             </div>

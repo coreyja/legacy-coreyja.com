@@ -42,6 +42,8 @@ h2.grid-title {
 			width: 100%;
 			height: 100%;
 
+			overflow: hidden;
+
 			text-align: center;
 
 			&.purple { background: @purple; }
@@ -50,6 +52,18 @@ h2.grid-title {
 			&.green { background: @green; }
 			&.orange { background: @orange; }
 
+			div.centered {
+				margin: auto;
+				position: absolute;
+				top: 0; left: 0; bottom: 0; right: 0;
+			}
+
+			div.not-centered {
+				h3.project-name {
+					margin-top: 40px;
+				}
+			}
+
 			h3.project-name {
 				color: #FFF;
 
@@ -57,10 +71,10 @@ h2.grid-title {
 				font-weight: normal;
 				text-transform: uppercase;
 
-				margin: 60px 0 0 0;
+				margin: 0px 0 0 0;
 			}
 
-			h4.project-short-desc {
+			h4.project-tags {
 				color: #FFF;
 
 				font-family: Times;
@@ -68,7 +82,23 @@ h2.grid-title {
 				font-weight: normal;
 				font-size: 20px;
 
-				margin: 20px 0;
+				margin: 10px 0;
+			}
+
+			h4.project-link-icons {
+				color: #FFF;
+				font-size: 25px;
+
+				margin: 10px 0;
+
+				i {
+					margin: 0 5px;
+				}
+
+				a, a:visited, a:hover {
+					color: #FFF;
+					text-decoration: none;
+				}
 			}
 
 			a.view-project {
