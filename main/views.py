@@ -52,4 +52,4 @@ class ProjectView(DetailView):
     template_name = 'Portfolio/detail.html'
 
     def get_object(self, queryset=None):
-        return Project.objects.prefetch_related('pictures', 'tags').get(slug=self.kwargs['slug'])
+        return Project.objects.prefetch_related('pictures', 'tags', 'links').get(slug=self.kwargs['slug'])

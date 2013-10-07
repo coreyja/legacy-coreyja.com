@@ -35,10 +35,21 @@
         </div>
 
         <div class="right">
-            <h1 class="title">
-                {{ project.name }}
-            </h1>
-            <h2 class="subtitle">{{ project.get_tag_string }}</h2>
+            <div class="info">
+                <div class="left">
+                    <h1 class="title">
+                        {{ project.name }}
+                    </h1>
+                    <h2 class="subtitle">{{ project.get_tag_string }}</h2>
+                </div>
+                <div class="links">
+                {% for link in project.links.all|slice:":3" %}
+                    {{ link.render }}
+                {% endfor %}
+                </div>
+            </div>
+
+
 
             {{ project.description|description_split }}
         </div>

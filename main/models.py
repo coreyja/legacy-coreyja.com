@@ -2,6 +2,7 @@ from django.core.urlresolvers import reverse
 from django.db import models
 from django.template.defaultfilters import slugify
 from sorl.thumbnail import ImageField
+from django.utils.safestring import mark_safe
 
 
 class ProjectTag(models.Model):
@@ -70,6 +71,7 @@ class ProjectLink(models.Model):
     LINK_TYPES = (
         ('W', 'WWW'),
         ('G', 'GitHub'),
+        ('B', 'BitBucket'),
     )
     type = models.CharField(max_length=1, choices=LINK_TYPES)
 
@@ -78,3 +80,22 @@ class ProjectLink(models.Model):
 
     def __unicode__(self):
         return self.url
+
+    def render(self):
+        icon_html = ''
+
+        if self.type == 'W':
+            icon = 'icon-globe'
+        elif self.type == 'G':
+            icon = 'icon-github'
+        elif self.type == 'B':
+            icon = 'icon-bitbucket'
+        else:
+            icon = ''
+
+        if icon:
+            icon_html = '<i class="%s"></i>' % icon
+
+        result = '<h2 class="url"><a href="%s" target="_blank">%s %s</a></h2>' % (self.url, icon_html, self.url)
+
+        return mark_safe(result)

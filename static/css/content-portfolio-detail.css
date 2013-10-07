@@ -56,11 +56,22 @@
   display: block;
   width: 50%;
   float: right;
+  overflow: hidden;
 }
 #project-detail-outer div.left {
   display: block;
   width: 50%;
   float: left;
+}
+#project-detail-outer div.info {
+  overflow: hidden;
+  clear: both;
+  height: 105px;
+  margin-bottom: 20px;
+  position: relative;
+}
+#project-detail-outer div.info div.left {
+  width: auto;
 }
 #project-detail-outer h1.title {
   font-size: 60px;
@@ -74,18 +85,25 @@
   font-size: 20px;
   margin-bottom: 0px;
 }
-#project-detail-outer h2.url {
+#project-detail-outer div.links {
+  width: auto;
+  margin-right: 20px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+#project-detail-outer div.links h2.url {
   font-family: 'Times';
   font-weight: normal;
   font-style: italic;
   font-size: 20px;
-  margin-top: 10px;
-  margin-bottom: 30px;
+  margin: 10px 0;
 }
-#project-detail-outer h2.url a,
-#project-detail-outer h2.url a:visited,
-#project-detail-outer h2.url a:hover {
+#project-detail-outer div.links h2.url a,
+#project-detail-outer div.links h2.url a:visited,
+#project-detail-outer div.links h2.url a:hover {
   color: #9a9a9a;
+  text-decoration: none;
 }
 #project-detail-outer p.desc {
   font-size: 14px;

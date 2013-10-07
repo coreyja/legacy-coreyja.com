@@ -42,7 +42,7 @@
 		display: block;
 		width: 50%;
 		float: right;
-
+		overflow: hidden;
 
 	}
 
@@ -50,6 +50,19 @@
 		display: block;
 		width: 50%;
 		float: left;
+	}
+
+	div.info {
+		overflow: hidden;
+		clear: both;
+		height: 105px;
+
+		margin-bottom: 20px;
+
+		position: relative;
+
+		div.left {width: auto;}
+
 	}
 
 	h1.title {
@@ -68,19 +81,29 @@
 		margin-bottom: 0px;
 	}
 
-	h2.url {
-		font-family: 'Times';
-		font-weight: normal;
-		font-style: italic;
-		font-size: 20px;
+	div.links {
+		width: auto;
+		margin-right: 20px;
 
-		margin-top: 10px;
-		margin-bottom: 30px;
+		position: absolute;
+		bottom: 0;
+		right: 0;
 
-		a, a:visited, a:hover {
-			color: @dark-gray;
+		h2.url {
+			font-family: 'Times';
+			font-weight: normal;
+			font-style: italic;
+			font-size: 20px;
+
+			margin: 10px 0;
+
+			a, a:visited, a:hover {
+				color: @dark-gray;
+
+				text-decoration: none;
+			}
+
 		}
-
 	}
 
 	p.desc {
