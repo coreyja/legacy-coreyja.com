@@ -22,6 +22,7 @@ h2.grid-title {
   display: inline-block;
   position: relative;
   margin-bottom: 20px;
+  border: #bcbcbc solid 1px;
 }
 #grid .portfolio-item:hover .hover {
   -moz-opacity: 1;
