@@ -185,6 +185,9 @@ body#resume div#work-experience div.experience div.info div.description {
   margin-top: 10px;
   font-size: 20px;
 }
+body#resume div#education {
+  padding-bottom: 20px;
+}
 body#resume div#education h1.title {
   font-weight: normal;
   font-size: 50px;
@@ -217,8 +220,11 @@ body#resume div#education div.info div.top-info span.time {
 body#resume div#education div.info div.top-info span.status {
   width: 300px;
 }
+body#resume div#education div.info div.top-info span.graduation {
+  width: 300px;
+}
 body#resume div#education div.info div.top-info span.gpa {
-  width: 500px;
+  width: 300px;
   float: right;
   text-align: right;
 }
@@ -717,6 +723,9 @@ body#resume div#work-experience div.experience div.info div.description {
   margin-top: 10px;
   font-size: 20px;
 }
+body#resume div#education {
+  padding-bottom: 20px;
+}
 body#resume div#education h1.title {
   font-weight: normal;
   font-size: 50px;
@@ -749,8 +758,11 @@ body#resume div#education div.info div.top-info span.time {
 body#resume div#education div.info div.top-info span.status {
   width: 300px;
 }
+body#resume div#education div.info div.top-info span.graduation {
+  width: 300px;
+}
 body#resume div#education div.info div.top-info span.gpa {
-  width: 500px;
+  width: 300px;
   float: right;
   text-align: right;
 }

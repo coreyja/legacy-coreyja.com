@@ -1,5 +1,5 @@
 Django==1.5.4
-PIL==1.1.7
+Pillow
 South==0.8.2
 argparse==1.2.1
 django-debug-toolbar==0.9.4
