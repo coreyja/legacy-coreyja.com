@@ -1,4 +1,4 @@
 coreyja.com
 ===========
 
-Source Code for Portofio/Blog Site
+Source Code for Portfolio Site
